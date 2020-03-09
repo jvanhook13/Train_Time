@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron" style="background-color: rgb(18, 18, 19); color:white;">
+        <h1 class="text-center">When is Mr. Train Coming</h1>
+        <h2 class="text-center">A list of train schedules</h2>
+        </div>
+​
+        <div class="row">
+            <div class="col-sm-12">
+        <br>
+        
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong><i class="fa fa-list-alt"></i>Current Trains</strong></h3>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th> Destination</th>
+                        <th> Frequency</th>
+                        <th> Next Arrival</th>
+                        <th> Minutes Away </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong><i class="fa fa-list-alt"></i>Add Train</strong></h3>
+            </div>
+          <div class="panel-body">
+              <!-- html heading for the inputs-->
+              <form Destination="form">
+                  <div class="form-group">
+                      <label for="Train-name">Train Name</label>
+                      <br>
+                      <input type="text" class="form-control" id="Train-name" style= width:650px; placeholder="410 to Yuma">
+                  </div>
+        <div class="form-group">
+            <label for="Destination">Destination: </label>
+            <br>
+            <input type="text" class="form-control" id="Destination" style= width:650px; placeholder="Yuma">
+        </div>
+        <div class="form-group">
+            <label for="start-date">Frequency (min):</label>
+            <input type="text" class="form-control" id="start-date" style= width:684px; placeholder="30">
+        </div>
+        
+        <button type="submit" class="btn btn-default" id="search"> Submit </button>
+​
+              </form>
+
+
+
+    
+</body>
+
+
+
+
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+​
+  <!-- Firebase Core JavaScript Link -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+​
+  <!-- Specific Firebase products we want (Database) -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+  <!-- my javascript -->
+  <script src="assets/javascript/app.js"></script>
+
+</html>
