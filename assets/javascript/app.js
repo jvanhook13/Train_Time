@@ -16,6 +16,29 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database() ;
+
+//intial values
+var name = ""
+var destination = ""
+var frequency = ""
+var firstTrain = ""
+var minAway = ""
+
+//Button Click
+$("#search").on("click", function(event) {
+  event.preventDefault()
+
+
+//grabs from form
+ name = $("#Train-name").val.trim() 
+ destination = $("#Destination").val.trim()
+ frequency = $("#frequency").val.trim()
+ firstTrain = $("#").val.trim()
+ minAway = $("#").val.trim()
+
+
+
+})
 //snapshot the values of a form
 //push snapshot to database
 //use moment to get itme
