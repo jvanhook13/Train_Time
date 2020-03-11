@@ -18,11 +18,11 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database() ;
 
 //intial values
-var name = ""
-var destination = ""
-var frequency = ""
-var firstTrain = ""
-var minAway = ""
+var name 
+var destination 
+var frequency 
+var firstTrain 
+var minAway 
 
 //Button Click
 $("#search").on("click", function(event) {
@@ -39,40 +39,40 @@ $("#search").on("click", function(event) {
  firstTrain = $("#firstTrain").val().trim()
  console.log(firstTrain)
  
-
+ database.ref().push({
+  name: name ,
+  destination: destination ,
+  frequency: frequency ,
+  firstTrain: firstTrain
+  
+  
+  })
+  
+  //snapshot the values of a form
+  database.ref().on("child_added" , function(snapshot){
+  
+    var sv = snapshot.val() ;
+  
+    console.log("name" , sv.name)
+    console.log("destination" , sv.destination)
+    console.log("frequency" , sv.frequency)
+    console.log("firstTrain" , sv.firstTrain)
+  
+    $("#nameTrain").text(sv.name) ;
+    $("#destinations").text(sv.destination) ;
+    $("#frequencies").text(sv.frequency) ;
+    $("#firstTrain").text(sv.firstTrain) ;
+  
+  
+  
+  
+  })
 
 
 })
 
 //push to database
-database.ref().push({
-name: name ,
-destination: destination ,
-frequency: frequency ,
-firstTrain: firstTrain
 
-
-})
-
-//snapshot the values of a form
-database.ref().on("child_added" , function(snapshot){
-
-  var sv = snapshot.val() ;
-
-  console.log("name" , sv.name)
-  console.log("destination" , sv.destination)
-  console.log("frequency" , sv.frequency)
-  console.log("firstTrain" , sv.firstTrain)
-
-  $("#firstTrain").text(sv.name) ;
-  $("#destinations").text(sv.destination) ;
-  $("#frequencies").text(sv.frequency) ;
-  $("#firstTrain").text(sv.firstTrain) ;
-
-
-
-
-})
 //use moment to get itme
 //set interval to train schedule
 //calculate till next train
