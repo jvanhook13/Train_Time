@@ -58,10 +58,22 @@ $(document).ready(function () {
       console.log("frequency", sv.frequency)
       console.log("firstTrain", sv.firstTrain)
 
-      $("#nameTrain").append(sv.name);
-      $("#destinations").append(sv.destination);
-      $("#frequencies").append(sv.frequency);
-      $("#firstTrain").append(sv.firstTrain);
+      var a = $("<tr>") ;
+
+      var displayName = a.html(sv.name);
+      var displayDestination = a.html(sv.destination);
+      var displayFrequency = a.html(sv.frequency);
+      var displayFirstTrain = a.html(sv.firstTrain);
+
+      $("#nameTrain").append(displayName);
+      $("#destinations").append(displayDestination);
+      $("#frequencies").append(displayFrequency);
+      $("#firstTrain").append(displayFirstTrain);
+
+      //unsure what is bugged here tried to quick fix a diff bug and now have this one plus the other
+      //but wanterd to make new table row with firebase snapshot data
+      //worked when I was just appending to the <th> though
+    
 
 
       var convertTime = moment(firstTrain, "HH:mm").subtract(1, "years")
@@ -82,7 +94,9 @@ $(document).ready(function () {
       var nextArrival = moment().add(timeAway, "minutes") ; 
       console.log("next arrival" , nextArrival)
 
-      
+      //not sure why this is giving NaN maybe syntax?
+      //but after this data is calculated needs to be pushed into fire base and the table
+    
 
 
 
@@ -91,13 +105,7 @@ $(document).ready(function () {
 
   })
 
-  //push to database
-
-  //use moment to get itme
-  //set interval to train schedule
-  //calculate till next train
-  //display with jquery
-
+  
 
 
 
